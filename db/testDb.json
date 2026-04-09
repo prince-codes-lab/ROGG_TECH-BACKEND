@@ -1,0 +1,49 @@
+{
+  "people": [
+    {
+      "name": "Ade",
+      "email": "myEmail",
+      "papa": "papa"
+    },
+    {
+      "name": "Ade",
+      "email": "myEmail",
+      "papa": "papa"
+    },
+    {
+      "name": "Ade",
+      "email": "myEmail",
+      "papa": "papa"
+    },
+    {
+      "fullname": "Favour",
+      "phonenumber": "08035923401",
+      "stack": "backend"
+    },
+    {
+      "fullname": "Favour",
+      "phonenumber": "08035923401",
+      "stack": "backend"
+    },
+    {
+      "fullname": "Favour",
+      "phonenumber": "08035923401",
+      "stack": "backend"
+    },
+    {
+      "fullname": "Favour",
+      "phonenumber": "08035923401",
+      "stack": "backend"
+    },
+    {
+      "fullname": "Favour",
+      "phonenumber": "08035923401",
+      "stack": "backend"
+    },
+    {
+      "fullname": "Favour",
+      "phonenumber": "08035923401",
+      "stack": "backend"
+    }
+  ]
+}

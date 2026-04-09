@@ -1,0 +1,14 @@
+Error: Please include a valid body, and complete details
+    at /home/elite/Desktop/ROGG_TECH/controllers/signUpController.js:13:21
+    at /home/elite/Desktop/ROGG_TECH/utils/asyncwrapper.js:4:19
+    at Layer.handleRequest (/home/elite/Desktop/ROGG_TECH/node_modules/router/lib/layer.js:152:17)
+    at next (/home/elite/Desktop/ROGG_TECH/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/home/elite/Desktop/ROGG_TECH/node_modules/router/lib/route.js:117:3)
+    at handle (/home/elite/Desktop/ROGG_TECH/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/home/elite/Desktop/ROGG_TECH/node_modules/router/lib/layer.js:152:17)
+    at /home/elite/Desktop/ROGG_TECH/node_modules/router/index.js:295:15
+    at processParams (/home/elite/Desktop/ROGG_TECH/node_modules/router/index.js:582:12)
+    at next (/home/elite/Desktop/ROGG_TECH/node_modules/router/index.js:291:5)MongooseError: Operation `peoples.findOne()` buffering timed out after 10000ms
+    at Timeout._onTimeout (/home/elite/Desktop/ROGG_TECH/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:131:25)
+    at listOnTimeout (node:internal/timers:585:17)
+    at process.processTimers (node:internal/timers:521:7)
