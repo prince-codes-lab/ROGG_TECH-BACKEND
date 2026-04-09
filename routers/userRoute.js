@@ -4,7 +4,9 @@ const { createANewUser } = require("../controllers/userController");
 
 
 router.route('/signup').post(createANewUser);
-
+router.route('/:id/delete').delete(deleteAUser);
+router.route('/').get(getAllUsers);
+router.route('/:id').get(getAUser);
 
 module.exports = router;
 
