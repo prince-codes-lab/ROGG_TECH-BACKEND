@@ -21,3 +21,5 @@ const News = new Schema({
     }
 
 });
+
+module.exports = mongoose.model('News', News);
