@@ -22,6 +22,11 @@ const tokenGenerator = (payLoad) => {
 const login = asyncWrapper(
     (req, res, next) => {
             const body = req.body;
+            const payLoad = {
+                email: body.email,
+                password: body.password,
+                role: User.findOne({email: body.email}).role
+            }
 
             // console.log('I got here')
 
@@ -32,7 +37,7 @@ const login = asyncWrapper(
                     return;
             }
 
-           const token =  tokenGenerator(body);
+           const token =  tokenGenerator(payLoad);
 
             res.status(200).json({
                 status: 'success',
@@ -44,6 +49,58 @@ const login = asyncWrapper(
     }
 )
 
+
+const verifyToken = asyncWrapper(
+    async (req, res, next) => {
+
+        const token = req.headers.authorization;
+
+        if(!token || !token.startsWith('Bearer ')) {
+            return next(new AppError('No token provided', 401));
+        }
+
+        const tokenLiteral = token.split(' ')[1];
+
+        const decoded = jwt.verify(tokenLiteral, process.env.JWT_SECRET);
+
+        if(!decoded){
+
+            return next(new AppError('Invalid token', 401));
+        }
+
+        req.user = decoded;
+        decoded.password = undefined;
+
+        next();
+
+    }
+
+
+
+);
+
+
+const authorizeAdmin = asyncWrapper(
+
+    async(req, res, next) => {
+        // Logic to check if the user is an admin
+
+        const checker = req.user.role;
+        
+
+        if(checker !== 'admin'){
+            return next(new AppError('Unauthorized access', 403));
+        }
+
+        return res.status(200).json({ isAdmin });
+
+        next(); 
+    }
+
+);
+
 module.exports = {
-    login
+    login,
+    verifyToken,
+    authorizeAdmin
 }
